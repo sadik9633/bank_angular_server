@@ -1,0 +1,159 @@
+ Server creation
+ to manage or control of database
+ recive request from clint
+ ---------------
+  1- create package.json file  - npm init
+  2- install express framework - npm i express - it install localy not globaly
+
+  server side technology - node resolve multiple request at atime
+api
+---
+api use to pass requst of server and clint
+to connect server and clint 
+  http request
+
+  headers - secret data
+  body - data-json/xml normal datas
+
+type of request
+---------------
+GET    - read
+POST   - create
+PUT    - complete updation
+PATCH  - partial updation
+DELETE - remove datas
+
+server response status code
+---------------------------
+100 - information
+200 - success
+300 - redirection
+400 - clint side errors
+500 - server side error(network error)
+
+server creation steps
+---------------------
+
+1-import the express
+2-create app using express
+3-port number seting  3000 - common running code
+4-resolve http request
+
+Nodemon
+-------
+
+if we run server using node, recombilation not work
+so we use anthor server nodemon
+
+- npm i -g nodemon
+- npm i nodemon
+
+methods 
+------
+- express.json() its a json method of inside of express method - to convert all requst datas from json to javascript  it convert and recive data
+
+- .json() it convert fromjavascript to json and send data as response
+
+ status -  to change the response status code as status code
+
+ TOKEN in Server
+ ---------------
+
+ JWT TOKEN - json web token
+ install
+       - npm i jsonwebtoken
+library - jsonwebtoken
+  -sign() - method used to generate jwt token  
+  -verif() - used to verify json web token
+
+token verification
+------------------
+
+-token verification can do using middlewares
+-middlewaers have the capacity to control server requests
+-middlewaers is a function with three arguments - request,response,next
+-middlewaers are two type
+
+   1-aplication specific middlewaer-
+      -work before all requests in server
+   2-router specific middlewaer
+      - can apply to specific requests in server
+
+how to solve runtime errors in json
+-----------------------------------
+try except
+
+try  (if any error happen try work )
+
+  error causing code
+
+(some time error happen some time no happen if try provid in a missleware so we must give a catch block)
+
+catch
+   error solve 
+
+
+--------------------------------------------------------------------------------------------------------------
+
+Mongo  DB - database
+--------------------
+
+install mongodb server
+
+shell commands
+--------------
+CRUD
+C - create
+R - red (get)
+U - update
+D - DELETE
+
+ - show dbs            - to see databases
+ - use (database_name) - to open a database
+ - show collections    - to see collections inside dbs
+ - db.(collection_name).find() - to read all data in collection_name
+ - db.(collection_name).findOne({acno:1000}) - to read single data
+ - db.(collection_name).insertOne({"acno":1001,"name":"amal",.....}) - to create new data
+ - db.(collection_name).find({balance:{gt:4000}}) - find using a codition
+
+ - db.(collection_name).deleteOne({"uname":"anu"}) - used to delete
+
+ - db.(collection_name).updateOne({uname.anu},{$set:{uname:anu A}}) - used to update
+
+ register  - insertOne
+
+ login     - findOne
+
+ deposit   - updateone
+
+ withdraw  - updateone
+
+ transaction history - findOne
+
+ delete    - deleteOne
+
+ server Database intergration
+ ----------------------------
+
+ database - 27017
+ server   - 3000
+
+ mongoose - used to server mdb intergration (its a librarary)
+
+ install - npm i mongoose
+
+  steps
+  -----
+   1.import mongoose
+   2.stae a collection string to intergrate
+   3.define a model for our collection
+
+   FrontEnd Server intergration
+   ----------------------------
+    CORS - cross origin resource sharing - its a library used to frontend and server intergration
+    - npm i cors
+
+    steps
+    -----
+    1-import cors
+    2-connection string
